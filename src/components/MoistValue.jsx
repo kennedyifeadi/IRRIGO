@@ -1,8 +1,6 @@
 
-const MoistValue = () => {
+export const MoistValue = () => {
   return (
     <div>MoistValue</div>
   )
 }
-
-export default MoistValue

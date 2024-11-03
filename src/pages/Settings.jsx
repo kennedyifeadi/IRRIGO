@@ -1,8 +1,15 @@
+import { motion } from "framer-motion"
 
-const Settings = () => {
+
+export const Settings = () => {
   return (
-    <div>Settings</div>
+    <motion.div 
+        className="h-full w-full flex flex-col"
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{opacity:0}}
+        >
+            Settings
+        </motion.div>
   )
 }
-
-export default Settings
