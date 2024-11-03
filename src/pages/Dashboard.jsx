@@ -16,7 +16,7 @@ export const Dashboard = () => {
         exit={{opacity:0}}
         >
             <Greetings />
-            <div className="flex w-[90%] justify-between shadow-md p-4 h-max rounded-md bg-white">
+            <div className="flex w-[90%] mt-5 justify-between shadow-md p-4 h-max rounded-md bg-white">
               <TempValue />
               <HumidValue />
               <MoistValue />
