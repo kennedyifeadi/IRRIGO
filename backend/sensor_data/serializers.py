@@ -5,3 +5,5 @@ class SensorDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = SensorData
         fields = '__all__'
+        read_only_fields = ['created_at']
+
