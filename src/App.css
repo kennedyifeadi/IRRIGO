@@ -1,0 +1,3 @@
+.gridmap{
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+}
