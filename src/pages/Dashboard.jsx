@@ -12,7 +12,7 @@ import { WaterLevel } from "../components/WaterLevel"
 export const Dashboard = () => {
   return (
     <motion.div 
-        className="h-max items-center w-full flex flex-col"
+        className="h-max relative items-center w-full flex flex-col"
         initial={{opacity:0}}
         animate={{opacity:1}}
         exit={{opacity:0}}

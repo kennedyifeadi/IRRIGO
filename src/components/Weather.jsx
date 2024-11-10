@@ -1,8 +1,10 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios'
 
 export const Weather = () => {
+  const popoverRef = useRef(null);
+    const [isPopoverVisible, setIsPopoverVisible] = useState(false);
     const [windSpeed, setWindSpeed] = useState("")
     const [condition, setConditon] = useState("")
     const [temperature, setTemperature] = useState("")
@@ -80,20 +82,53 @@ export const Weather = () => {
             setForecastWindDirection([...forecastWindDirectionArray])
     }
 
+    const togglePopover = () => {
+      setIsPopoverVisible((prev) => !prev);
+    };
+
+    const handleClickOutside = (event) => {
+      if (popoverRef.current && !popoverRef.current.contains(event.target)) {
+        setIsPopoverVisible(false); // Hide popover if clicked outside
+      }
+    };
+
+    useEffect(() => {
+      // Attach event listener to document on mount
+      document.addEventListener("mousedown", handleClickOutside);
+  
+      // Clean up event listener on unmount
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
+
     useEffect(()=>{
         fetchData()
-
-    }, [])
+        console.log(isPopoverVisible)
+    }, [isPopoverVisible])
 
   return (
-    <div className='py-1 px-2 flex flex-col shadow-md rounded-md bg-white justify-center items-center active:scale-75 duration-300 ease-in-out cursor-pointer'>
+   <div className='flex items-center justify-center '>
+     <div onClick={togglePopover} className='relative py-1 px-2 flex flex-col shadow-md rounded-md bg-white justify-center items-center active:scale-75 duration-300 ease-in-out cursor-pointer'>
         <DotLottieReact
         src="https://lottie.host/6b83a545-e797-4256-9665-7d815900e45e/bGBCP1bbTe.json"
         loop
         autoplay
         className="w-15 h-10 "
         />
+
+
         <span className='text-[10px]'>{condition} {temperature}°C</span>
     </div>
+    {isPopoverVisible && (
+      <div ref={popoverRef}  className='fixed p-4  duration-300 ease-in-out top-[20dvh] left-5 w-[350px] bg-white shadow-md h-[400px]  rounded-md'>
+        <h1>Location</h1>
+        {
+          
+        }
+
+      </div>
+    )}
+   </div>
   )
 }
