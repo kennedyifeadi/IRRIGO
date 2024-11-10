@@ -19,8 +19,8 @@ export const Dashboard = () => {
         exit={{opacity:0}}
         >
             <Greetings />
-            <WaterLevel/>
             <Streak/>
+            <WaterLevel/>
             <Weather/>
             <div className="flex w-[90%] mt-5 justify-between shadow-md p-4 h-max rounded-md bg-white">
               <TempValue />
