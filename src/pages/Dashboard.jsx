@@ -6,7 +6,6 @@ import { MoistValue } from "../components/MoistValue"
 import { Cycle } from "../components/Cycle"
 import { IrrigationMap } from "../components/IrrigationMap"
 import { Streak } from "../components/Streak"
-import { Weather } from "../components/Weather"
 import { WaterLevel } from "../components/WaterLevel"
 
 
@@ -21,7 +20,6 @@ export const Dashboard = () => {
             <Greetings />
             <Streak/>
             <WaterLevel/>
-            <Weather/>
             <div className="flex w-[90%] mt-5 justify-between shadow-md p-4 h-max rounded-md bg-white">
               <TempValue />
               <HumidValue />
