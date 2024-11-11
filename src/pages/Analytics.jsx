@@ -1,4 +1,7 @@
 import { motion } from "framer-motion"
+import { SoilHealth } from "../components/SoilHealth"
+import { SoilAnalutics } from "../components/SoilAnalutics"
+import { AiInference } from "../components/AiInference"
 
 
 export const Analytics = () => {
@@ -9,7 +12,9 @@ export const Analytics = () => {
         animate={{opacity:1}}
         exit={{opacity:0}}
         >
-            Analytics
+            <SoilHealth/>
+            <SoilAnalutics/>
+            <AiInference/>  
         </motion.div>
   )
 }
