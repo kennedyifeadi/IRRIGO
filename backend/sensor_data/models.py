@@ -17,4 +17,11 @@ class Location(models.Model):
 
     def __str__(self):
         return f'{self.name} ({self.latitude}, {self.longitude})'if self.name else f'Location, ({self.latitude}, {self.longitude})'
-    
+
+class HardWaredata(models.Model):
+    battery_level = models.FloatField()
+    water_level = models.FloatField()
+
+    def __str__(self):
+        return f'Battery level: {self.battery_level}, Water level: {self.water_level}'
+       
