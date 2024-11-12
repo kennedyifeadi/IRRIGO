@@ -118,7 +118,7 @@ export const Weather = () => {
         />
 
 
-        <span className='text-[10px]'>{condition} {temperature}°C</span>
+        <span className='text-[10px] max-w-[100px] '>{condition} {temperature}°C</span>
     </div>
     {isPopoverVisible && (
       <div ref={popoverRef}  className='fixed p-4  duration-300 ease-in-out top-[20dvh] left-5 w-[350px] bg-white shadow-md h-[400px]  rounded-md'>

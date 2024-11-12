@@ -1,19 +1,19 @@
 import { motion } from "framer-motion"
 import { SoilHealth } from "../components/SoilHealth"
-import { SoilAnalutics } from "../components/SoilAnalutics"
+import { SoilAnalytics } from "../components/SoilAnalytics"
 import { AiInference } from "../components/AiInference"
 
 
 export const Analytics = () => {
   return (
     <motion.div 
-        className="h-full w-full flex flex-col"
+        className="h-[100dvh] w-full flex flex-col"
         initial={{opacity:0}}
         animate={{opacity:1}}
         exit={{opacity:0}}
         >
             <SoilHealth/>
-            <SoilAnalutics/>
+            <SoilAnalytics/>
             <AiInference/>  
         </motion.div>
   )
