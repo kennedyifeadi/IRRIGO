@@ -7,7 +7,7 @@ import { AiInference } from "../components/AiInference"
 export const Analytics = () => {
   return (
     <motion.div 
-        className="h-[100dvh] w-full flex flex-col"
+        className="h-[120dvh] w-full flex flex-col items-center bg-[#F4F4F9] "
         initial={{opacity:0}}
         animate={{opacity:1}}
         exit={{opacity:0}}
