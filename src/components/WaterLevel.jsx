@@ -22,8 +22,8 @@ export const WaterLevel = () => {
       autoplay
       className="w-15 h-10 "
     />
-            <span className="text-[12px] font-bold">
-                73 grams
+            <span className="text-[12px] font-semibold">
+                73 liters
             </span>
         </div>
     </div>
