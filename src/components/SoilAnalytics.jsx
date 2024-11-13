@@ -75,7 +75,7 @@ export const SoilAnalytics = () => {
   };
 
   return (
-    <div className="px-4 flex flex-col w-full mt-5 bg-white ">
+    <div className="px-4 flex flex-col w-[95%] rounded-md py-2 mt-5 bg-white ">
       <div className="flex justify-between w-full items-center z-10">
         <h1 className="text-[24px] font-bold">
           Soil Analytics

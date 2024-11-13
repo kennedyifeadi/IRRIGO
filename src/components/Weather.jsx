@@ -19,10 +19,11 @@ export const Weather = () => {
     const [forecastPressure, setForecastPressure] = useState([])
     const [forecastHumidity, setForecastHumidity] = useState([])
     const [forecastWindDirection, setForecastWindDirection] = useState([])
+    const weatherAPI = "http://api.weatherapi.com/v1/forecast.json?key=a4f33c6a6aa4444a949135854241011&q=ibadan&days=2&aqi=yes&alerts=yes"
 
 
     const fetchData = async ()=>{
-        const res = await axios.get('http://api.weatherapi.com/v1/forecast.json?key=a4f33c6a6aa4444a949135854241011&q=ibadan&days=2&aqi=yes&alerts=yes')
+        const res = await axios.get(weatherAPI)
         const data = res.data
         const forecastDay = data.forecast.forecastday[1].date
         const currentCondition = data.current.condition.text
@@ -104,8 +105,7 @@ export const Weather = () => {
 
     useEffect(()=>{
         fetchData()
-        console.log(isPopoverVisible)
-    }, [isPopoverVisible])
+    }, [])
 
   return (
    <div className='flex items-center justify-center '>
