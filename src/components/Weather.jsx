@@ -19,7 +19,7 @@ export const Weather = () => {
     const [forecastPressure, setForecastPressure] = useState([])
     const [forecastHumidity, setForecastHumidity] = useState([])
     const [forecastWindDirection, setForecastWindDirection] = useState([])
-    const weatherAPI = "http://api.weatherapi.com/v1/forecast.json?key=a4f33c6a6aa4444a949135854241011&q=ibadan&days=2&aqi=yes&alerts=yes"
+    const weatherAPI = "https://api.weatherapi.com/v1/forecast.json?key=a4f33c6a6aa4444a949135854241011&q=ibadan&days=2&aqi=yes&alerts=yes"
 
 
     const fetchData = async ()=>{
