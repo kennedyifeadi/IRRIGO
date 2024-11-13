@@ -22,7 +22,7 @@ export const Weather = () => {
 
 
     const fetchData = async ()=>{
-        const res = await axios.get('http://api.weatherapi.com/v1/forecast.json?key=a4f33c6a6aa4444a949135854241011&q=lagos&days=2&aqi=yes&alerts=yes')
+        const res = await axios.get('http://api.weatherapi.com/v1/forecast.json?key=a4f33c6a6aa4444a949135854241011&q=ibadan&days=2&aqi=yes&alerts=yes')
         const data = res.data
         const forecastDay = data.forecast.forecastday[1].date
         const currentCondition = data.current.condition.text
