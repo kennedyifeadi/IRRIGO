@@ -5,35 +5,38 @@ import { lineChartData } from '../data/Soildata';
 
 export const AiInference = () => {
   const [response, setResponse] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   const API_KEY = "AIzaSyDVlfPlzubkQw9orWkmunaTQ2Ku2FQG4Ug"
   const genAI = new GoogleGenerativeAI(API_KEY)
 
-      const dataOne = [...lineChartData.datasets[0].data];
-      const labelOne = lineChartData.datasets[0].label;
-      const dataTwo = [...lineChartData.datasets[1].data];
-      const labelTwo = lineChartData.datasets[1].label;
-      const dataThree = [...lineChartData.datasets[2].data];
-      const labelThree = lineChartData.datasets[2].label;
+  const dataOne = [...lineChartData.datasets[0].data];
+  const labelOne = lineChartData.datasets[0].label;
+  const dataTwo = [...lineChartData.datasets[1].data];
+  const labelTwo = lineChartData.datasets[1].label;
+  const dataThree = [...lineChartData.datasets[2].data];
+  const labelThree = lineChartData.datasets[2].label;
 
-  const fetchData= async ()=>{
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const fetchData = async () => {
     try {
-      
-
-      const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
       const prompt = `Analyze the following soil health data for the past week, consisting of temperature (°C), humidity (%), and soil moisture (%). Provide a brief, actionable summary of the trends and their impact on soil health based on the data: ${labelOne} ${dataOne} ${labelTwo} ${dataTwo} ${labelThree} ${dataThree}, Give a short summary (3-4 sentences) highlighting the overall soil health and recommendations for irrigation or soil care. dont bold the title or text`
       const result = await model.generateContent(prompt);
+      await sleep(3000);
+      setIsLoading(false)
       setResponse(result.response.text());
     } catch (error) {
       console.log(error);
       setResponse("Error fetching data");
-      
+
     }
   }
 
   useEffect(() => {
 
-    fetchData(); 
-    
+    fetchData();
+
   }, []);
 
   return (
@@ -47,9 +50,13 @@ export const AiInference = () => {
           className="w-24 h-24 mr-[-30px]"
         />
       </div>
-      <div className="flex w-[99.5%] p-4 rounded-md bg-[#80808059] overflow-y-auto h-[80%]">
+      <div className="flex w-[99.5%] p-4 rounded-md bg-[#8080801a] overflow-y-auto h-[80%]">
         <span className="w-full h-max max-h-full overflow-y-auto">
-          {response}
+          {isLoading ? <DotLottieReact
+            src="https://lottie.host/84b29f64-08a4-4073-8f17-8e3e578a92b6/UPR6ahml8E.json"
+            loop
+            autoplay
+          /> : response}
         </span>
       </div>
     </div>
