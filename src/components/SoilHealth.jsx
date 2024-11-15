@@ -5,7 +5,7 @@ export const SoilHealth = () => {
   return (
     <div className="w-full px-4 mt-5 h-max flex justify-between items-center">
         <div>
-            <h1 className="font-bold text-[30px] text-[#64B5F6]">
+            <h1 className="font-bold text-[30px] text-[#808080c7]">
                 Soil Health
             </h1>
         </div>
