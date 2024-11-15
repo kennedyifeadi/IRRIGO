@@ -4,6 +4,6 @@ from .models import SensorData
 class SensorDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = SensorData
-        fields = '__all__'
+        fields = ['temperature', 'humidity', 'soil_moisture', 'battery_level', 'water_level', 'created_at']
         read_only_fields = ['created_at']
 

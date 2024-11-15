@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import receive_sensor_data
+from .views import receive_sensor_data, SensorDataView
 
 urlpatterns = [
-    path('receive-data/', receive_sensor_data, name='receive_sensor_data'),
+    path('api/receive-sensor-data/', receive_sensor_data, name='receive_sensor_data'),
+    path('api/sensor-data/', SensorDataView.as_view(), name='sensor_data'),
 ]
