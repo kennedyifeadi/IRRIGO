@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import { SettingsPage } from "../components/SeetingsComponent"
 
 
 export const Settings = () => {
@@ -9,7 +10,7 @@ export const Settings = () => {
         animate={{opacity:1}}
         exit={{opacity:0}}
         >
-            Settings
+            <SettingsPage/>
         </motion.div>
   )
 }
