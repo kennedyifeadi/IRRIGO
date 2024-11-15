@@ -3,10 +3,6 @@ import { FaGlobe, FaLock, FaInfoCircle, FaStar, FaShareAlt, FaTh } from 'react-i
 export const SettingsPage = () => {
   return (
     <div className="max-w-md mx-auto p-6 font-sans">
-      {/* Header */}
-      <header className=" mb-6">
-        <h1 className="text-[28px] font-bold text-[#64B5F6]">Settings</h1>
-      </header>
 
       {/* Upgrade Section */}
       <div className="border border-gray-300 rounded-lg p-4 text-center mb-6">

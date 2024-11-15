@@ -17,7 +17,7 @@ export const SoilHealth = () => {
             </div>
             <div className="flex flex-col text-[18px]">
             {/* <BiSolidUpArrow className="text-[#4CAF50]" /> */}
-            <span className="relative before:absolute before:w-4 before:top-[5px] before:h-4 before:content-['+5'] before:text-[red] before:text-[8px] before:left-4">
+            <span className="relative before:absolute before:w-4 before:top-[-10px] before:h-4 before:content-['+5%'] before:text-[red] before:text-[8px] before:left-0">
             <BiSolidDownArrow className="text-[red] " />
 
             </span>
