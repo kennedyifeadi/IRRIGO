@@ -23,7 +23,7 @@ export const AiInference = () => {
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
       const prompt = `Analyze the following soil health data for the past week, consisting of temperature (°C), humidity (%), and soil moisture (%). Provide a brief, actionable summary of the trends and their impact on soil health based on the data: ${labelOne} ${dataOne} ${labelTwo} ${dataTwo} ${labelThree} ${dataThree}, Give a short summary (3-4 sentences) highlighting the overall soil health and recommendations for irrigation or soil care. dont bold the title or text`
       const result = await model.generateContent(prompt);
-      await sleep(3000);
+      await sleep(1000);
       setIsLoading(false)
       setResponse(result.response.text());
     } catch (error) {
