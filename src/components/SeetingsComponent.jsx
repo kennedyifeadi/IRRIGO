@@ -3,7 +3,7 @@ import { IoMdSettings } from "react-icons/io";
 import { GiCycle } from "react-icons/gi";
 import { FaGlassWaterDroplet } from "react-icons/fa6";
 import { GiRobotGrab } from "react-icons/gi";
-import MaleProfile from "../assets/male profile.jpg"
+import MaleProfile from "../assets/male profile 2.jpg"
 export const SettingsPage = () => {
   return (
     <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg p-6 font-sans">

@@ -1,6 +1,6 @@
 import { FaCircleUser } from "react-icons/fa6";
 import Irrigo_Logo from "../assets/Irrigo_Logo.png";
-import MaleProfile from "../assets/male profile.jpg"
+import MaleProfile from "../assets/male profile 2.jpg"
 
 
 export const TopNav = () => {
