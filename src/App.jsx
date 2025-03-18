@@ -28,3 +28,5 @@ function App() {
 
 export default App
 
+// api key = AIzaSyAVMjeW4uwJOY74xiUYDI7ZXt_ct4Rl-JQ
+// url = https://irrigoserver-default-rtdb.firebaseio.com/
