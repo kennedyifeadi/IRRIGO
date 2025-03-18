@@ -12,9 +12,7 @@ export const BottomNav = () => {
       <div className="flex justify-between h-full shadow-[0px_0px_5px_#0000004d] bg-white w-[90%] rounded-full ">
         <ul className="flex justify-between items-center px-5 h-full w-full  "> 
         <li className="text-[24px] flex flex-col justify-center items-center">
-        <NavLink
-                to="/"
-              >
+          <NavLink to="/">
                 {({ isActive }) => (
                   <motion.div
                     initial={{ color: isActive ? "#333333" : "#4CAF50" }}
@@ -26,7 +24,8 @@ export const BottomNav = () => {
                     <span className="text-[14px]">Home</span>
                   </motion.div>
                 )}
-              </NavLink> </li>
+          </NavLink> 
+        </li>
               <li className="text-[24px] flex flex-col justify-center items-center">
         <NavLink
                 to="/analytics"
